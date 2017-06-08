@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".wave").height($(".wave").width()),$(window).resize(function(){$(".wave").height($(".wave").width())});var e=navigator.language||navigator.userLanguage;if("de"==e||"de-de"==e)var a="de";else var a="en";$("html").addClass("lang "+a),$("#change-language").click(function(){$("html").toggleClass("en de")})});
