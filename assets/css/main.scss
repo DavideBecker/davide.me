@@ -1,0 +1,54 @@
+$mainBlue: #007DBF;
+$text: #313131;
+$borderGrey: #E2E3E2;
+
+html {
+    transition: all 500ms ease;
+    // background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAHElEQVQYlWO4ePHCfwYkgM5nwCeJwqeRJH3cAABipDcRG/i61wAAAABJRU5ErkJggg==');
+    background-color: #007DBF;
+
+    * {
+        //  font-family: 'Lato', sans-serif;
+        font-family: "Questrial", Georgia, serif;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+#logo {
+    width: 100%;
+    z-index: 999;
+    // background-color: #37BDFF;
+    background: url('../img/logo--white.png') no-repeat center top 25% / 64px;
+    color: #FFF;
+    text-align: center;
+    line-height: 400px;
+    font-size: 24px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+    &:after {
+        content: "hi@davide.me";
+    }
+}
+
+#card {
+    max-width: 640px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 300px;
+    margin: 0 auto;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    border-radius: 8px;
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+}
+
+canvas {
+    filter: blur(8px)
+}
