@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio | Davide Becker</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <template id="tpl-project">
+        <div class="project-logo-wrapper" style="{{=it.extraStyle}}">
+            <div class="project-logo" style="background-image: url('./assets/images/{{=it.logo}}')"></div>
+        </div>
+        <div class="project-label">
+            <div class="project-name">{{=it.name}}</div>
+            <div class="project-teaser">{{=it.teaser}}</div>
+        </div>
+    </template>
+    <template id="tpl-project-details">
+        <div class="project" style="background-color: {{=it.logoBackground}}">
+            <div class="project-logo-wrapper" style="{{=it.extraStyle}}">
+                <div class="project-logo" style="background-image: url('./assets/images/{{=it.logo}}')"></div>
+            </div>
+            <div class="project-label">
+                <div class="project-name">{{=it.name}}</div>
+                <div class="project-teaser">{{=it.teaser}}</div>
+            </div>
+            <div class="project-details-wrapper">
+                <div class="project-details">
+                    <div class="headline">Kurzbeschreibung</div>
+                    <div class="project-description">
+                        {{=it.description}}
+                    </div>
+
+                    <div class="project-links-wrapper">
+                        {{? it.links.length }}
+                            <div class="headline">Weiterführende Links</div>
+                        {{?}}
+
+                        {{ for(var link of it.links) { }}
+                            <a class="link" target="_blank" href="{{=link.url}}">{{=link.title}}</a><br>
+                        {{ } }}
+                    </div>
+
+                    {{? it.gallery.length }}
+                        <div class="headline">Galerie</div>
+                    {{?}}
+                </div>
+
+                {{? it.gallery.length }}
+                    <div class="project-gallery-wrapper">
+                        {{ for(var image of it.gallery) { }}
+                            <!-- <a href="./assets/images/{{=image}}" target="_blank"> -->
+                                <img class="project-gallery-image" src="./assets/images/{{=image}}" alt="">
+                            <!-- </a> -->
+                        {{ } }}
+                    </div>
+                {{?}}
+            </div>
+        </div>
+    </template>
+
+    <div id="floating-wrapper">
+        <div id="floating-container">
+            <div id="back">X</div>
+            <div id="floating"></div>
+        </div>
+    </div>
+    <div id="logo"></div>
+    <div id="projects"></div>
+
+    <div id="sub">Ganz nebenbei. Diese Seite selbst ist auch Teil des Portfolios. Komplett von Grund auf erstellt in etwa 4 Stunden.</div>
+
+    <script src="./assets/doT.js"></script>
+    <script src="./assets/scripts.js"></script>
+</body>
+
+</html>

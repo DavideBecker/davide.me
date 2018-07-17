@@ -1,0 +1,222 @@
+@import 'reset'
+
+$animationDuration: 300ms
+
+body
+    overflow-y: scroll
+
+html
+    background-color: #F1F1F1
+
+    *
+        box-sizing: border-box
+        font-family: 'Montserrat', sans-serif
+
+#logo
+    background: url('./images/logo--blue.png') no-repeat center center / contain
+    height: 100px
+    margin-top: 40px
+
+#floating-wrapper
+    position: fixed
+    transition: all $animationDuration
+    width: 100%
+    top: 0
+    left: 0
+    z-index: -1
+    height: 100%
+
+#back
+    background-color: #007BC4
+    width: 64px
+    height: 64px
+    text-align: center
+    line-height: 64px
+    color: #FFF
+    border-radius: 8px
+    font-size: 32px
+    transition: all $animationDuration
+    z-index: 9999
+    position: fixed
+    top: -100px
+    transform: translate(50%, 50%)
+
+    &:hover
+        background-color: #39BCFE
+        cursor: pointer
+
+.floating-done
+    #floating-container
+        position: static
+
+    #floating-wrapper
+        position: static
+
+    #projects
+        display: none
+
+    #logo
+        display: none
+
+.floating-active
+    #back
+        top: 0
+
+    #floating-wrapper
+        z-index: 999
+    
+    #floating
+        transition: all $animationDuration
+
+        .project
+            margin: 0
+            max-width: 1060px
+            margin: 0 auto
+            height: 100%
+
+            .project-gallery-wrapper
+                padding: 32px
+                background-color: #444
+                text-align: center
+
+            .project-gallery-image
+                max-width: 100%
+                margin: 16px 0
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,.075)
+                border: 8px solid #FFF
+
+            &:hover
+                cursor: inherit
+
+            .project-logo-wrapper
+                height: 300px
+                width: 100%
+                max-width: 500px
+                padding: 40px 16px
+                transition: all $animationDuration
+
+            .project-logo
+                transition: all $animationDuration
+
+            .project-label
+                flex: 0
+                text-align: center
+                border-bottom: 1px solid #EFEFEF
+                transition: all $animationDuration
+
+                .project-name
+                    font-size: 32px
+                    transition: all $animationDuration
+            
+            .project-details-wrapper
+                flex: 1
+                background-color: #FFF
+
+            .project-details
+                color: rgba(0,0,0,0.8)
+                padding: 16px
+                font-size: 16px
+                line-height: 1.5
+                max-width: 600px
+                margin: 0 auto
+                border-radius: 4px
+
+                .link
+                    color: #333
+
+                    &:hover
+                        color: #39BCFE
+                        text-decoration: none
+
+                .headline
+                    font-size: 24px
+                    font-weight: 600
+                    margin-top: 40px
+                    margin-bottom: 16px
+
+            &:hover .project-label
+                transition: none
+                background-color: #FAFAFA
+                border-top-color: #FAFAFA
+                color: #333
+
+#floating-container
+    max-width: 1060px
+    margin: 0 auto
+    height: 100%
+    position: relative
+
+#floating
+    position: absolute
+
+#projects
+    margin: 40px auto
+    max-width: 1060px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    
+    // &:after 
+    //     content: ""
+    //     flex: auto
+
+.project
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.075)
+    background-color: #FFF
+    transition: all 400ms ease
+    width: 100%
+    flex-basis: 320px
+    margin: 16px
+    display: flex
+    flex-direction: column
+    
+    &:hover
+        cursor: pointer
+
+    .project-logo-wrapper
+        height: 140px
+        width: 250px
+        max-width: 100%
+        padding: 16px
+        margin: 0 auto
+
+    .project-logo
+        width: 100%
+        height: 100%
+        background: no-repeat center center / contain
+    
+    .project-label
+        border-top: 1px solid #EFEFEF
+        background-color: #FAFAFA
+        padding: 16px
+        color: #333
+        transition: background 400ms ease
+        flex: 1
+
+    &:hover .project-label
+        transition: none
+        background-color: #39BCFE
+        border-top-color: #39BCFE
+        color: #FFF
+
+    .project-name
+        font-weight: 600
+
+    .project-teaser
+        margin-top: 8px
+
+#sub
+    text-align: center
+    max-width: 1000px
+    margin: 0 auto
+    color: rgba(0,0,0,0.6)
+    font-size: 12px
+    padding-bottom: 32px
+    line-height: 1.5
+
+@keyframes gallery
+    0%, 100%
+        transform: translateX(0)
+        
+    50%
+        transform: translateX(-100%)

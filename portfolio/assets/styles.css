@@ -1,0 +1,335 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+html {
+  background-color: #F1F1F1;
+}
+
+html * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#logo {
+  background: url("./images/logo--blue.png") no-repeat center center/contain;
+  height: 100px;
+  margin-top: 40px;
+}
+
+#floating-wrapper {
+  position: fixed;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+}
+
+#back {
+  background-color: #007BC4;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  color: #FFF;
+  border-radius: 8px;
+  font-size: 32px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  z-index: 9999;
+  position: fixed;
+  top: -100px;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+
+#back:hover {
+  background-color: #39BCFE;
+  cursor: pointer;
+}
+
+.floating-done #floating-container {
+  position: static;
+}
+
+.floating-done #floating-wrapper {
+  position: static;
+}
+
+.floating-done #projects {
+  display: none;
+}
+
+.floating-done #logo {
+  display: none;
+}
+
+.floating-active #back {
+  top: 0;
+}
+
+.floating-active #floating-wrapper {
+  z-index: 999;
+}
+
+.floating-active #floating {
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.floating-active #floating .project {
+  margin: 0;
+  max-width: 1060px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.floating-active #floating .project .project-gallery-wrapper {
+  padding: 32px;
+  background-color: #444;
+  text-align: center;
+}
+
+.floating-active #floating .project .project-gallery-image {
+  max-width: 100%;
+  margin: 16px 0;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075);
+          box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075);
+  border: 8px solid #FFF;
+}
+
+.floating-active #floating .project:hover {
+  cursor: inherit;
+}
+
+.floating-active #floating .project .project-logo-wrapper {
+  height: 300px;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 16px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.floating-active #floating .project .project-logo {
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.floating-active #floating .project .project-label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  text-align: center;
+  border-bottom: 1px solid #EFEFEF;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.floating-active #floating .project .project-label .project-name {
+  font-size: 32px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.floating-active #floating .project .project-details-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #FFF;
+}
+
+.floating-active #floating .project .project-details {
+  color: rgba(0, 0, 0, 0.8);
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.floating-active #floating .project .project-details .link {
+  color: #333;
+}
+
+.floating-active #floating .project .project-details .link:hover {
+  color: #39BCFE;
+  text-decoration: none;
+}
+
+.floating-active #floating .project .project-details .headline {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.floating-active #floating .project:hover .project-label {
+  -webkit-transition: none;
+  transition: none;
+  background-color: #FAFAFA;
+  border-top-color: #FAFAFA;
+  color: #333;
+}
+
+#floating-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+#floating {
+  position: absolute;
+}
+
+#projects {
+  margin: 40px auto;
+  max-width: 1060px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.project {
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075);
+          box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075);
+  background-color: #FFF;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  width: 100%;
+  -ms-flex-preferred-size: 320px;
+      flex-basis: 320px;
+  margin: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project .project-logo-wrapper {
+  height: 140px;
+  width: 250px;
+  max-width: 100%;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.project .project-logo {
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center / contain;
+}
+
+.project .project-label {
+  border-top: 1px solid #EFEFEF;
+  background-color: #FAFAFA;
+  padding: 16px;
+  color: #333;
+  -webkit-transition: background 400ms ease;
+  transition: background 400ms ease;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.project:hover .project-label {
+  -webkit-transition: none;
+  transition: none;
+  background-color: #39BCFE;
+  border-top-color: #39BCFE;
+  color: #FFF;
+}
+
+.project .project-name {
+  font-weight: 600;
+}
+
+.project .project-teaser {
+  margin-top: 8px;
+}
+
+#sub {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  padding-bottom: 32px;
+  line-height: 1.5;
+}
+
+@-webkit-keyframes gallery {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes gallery {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
